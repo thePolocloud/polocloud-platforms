@@ -1,0 +1,22 @@
+{
+	"name": "velocity",
+	"type": "PROXY",
+	"language": "JAVA",
+	"tasks": [
+		{
+			"name": "example-task",
+			"versions": ">1.13 && <1.21"
+		}
+	],
+	"versionDetection": {
+		"mode": "AUTOMATIC",
+		"baseUrl": "https://api.papermc.io/v2/projects/velocity",
+		"parse": {
+			"type": "JSON",
+			"versionPath": "versions[-1]",
+			"buildUrl": "{baseUrl}/versions/{version}/builds",
+			"buildPath": "builds[-1].build",
+			"downloadUrl": "{baseUrl}/versions/{version}/builds/{build}/downloads/velocity-{version}-{build}.jar"
+		}
+	}
+}
