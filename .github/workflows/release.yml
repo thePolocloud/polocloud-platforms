@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine next version
+        id: version
+        run: |
+          latest=$(git tag --list 'v3.0.*' --sort=-v:refname | head -n 1)
+          if [ -z "$latest" ]; then
+            next=0
+          else
+            patch="${latest##*.}"
+            next=$((patch + 1))
+          fi
+          echo "tag=v3.0.$next" >> "$GITHUB_OUTPUT"
+          echo "name=polocloud-platforms 3.0.$next" >> "$GITHUB_OUTPUT"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.name }}
+          generate_release_notes: true
