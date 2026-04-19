@@ -30,9 +30,18 @@ jobs:
           echo "tag=v3.0.$next" >> "$GITHUB_OUTPUT"
           echo "name=polocloud-platforms 3.0.$next" >> "$GITHUB_OUTPUT"
 
+      - name: Build release zip
+        run: |
+          zip -r polocloud-platforms.zip . \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --exclude "*.txt"
+
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: ${{ steps.version.outputs.name }}
           generate_release_notes: true
+          files: polocloud-platforms.zip
