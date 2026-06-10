@@ -1,0 +1,25 @@
+{
+  "name": "paper",
+  "type": "SERVER",
+  "language": "JAVA",
+  "globalArgs": [],
+  "tasks": [],
+  "javaVersionRanges": [
+    { "from": "1.7",    "java": 8  },
+    { "from": "1.17",   "java": 16 },
+    { "from": "1.18",   "java": 17 },
+    { "from": "1.20.5", "java": 21 },
+    { "from": "26.1",   "java": 21 }
+  ],
+  "versionDetection": {
+    "mode": "AUTOMATIC",
+    "baseUrl": "https://fill.papermc.io/v3/projects/paper",
+    "parse": {
+      "type": "JSON",
+      "versionPath": "versions",
+      "buildUrl": "{baseUrl}/versions/{version}/builds",
+      "buildPath": "[0].id",
+      "downloadPath": "[0].downloads[\"server:default\"].url"
+    }
+  }
+}
