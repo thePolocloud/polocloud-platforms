@@ -9,7 +9,7 @@
     { "from": "1.17",   "java": 16 },
     { "from": "1.18",   "java": 17 },
     { "from": "1.20.5", "java": 21 },
-    { "from": "26.1",   "java": 21 }
+    { "from": "26.1",   "java": 25 }
   ],
   "versionDetection": {
     "mode": "AUTOMATIC",
