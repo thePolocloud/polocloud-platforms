@@ -2,7 +2,9 @@
   "name": "paper",
   "type": "SERVER",
   "language": "JAVA",
-  "globalArgs": [],
+  "globalArgs": [
+    "nogui"
+  ],
   "tasks": [],
   "javaVersionRanges": [
     { "from": "1.7",    "java": 8  },
