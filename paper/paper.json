@@ -5,6 +5,9 @@
   "globalArgs": [
     "nogui"
   ],
+  "jvmArgs": [
+    "com.mojang.eula.agree=true"
+  ],
   "tasks": [
     {
       "key": "server_properties",
