@@ -5,7 +5,13 @@
   "globalArgs": [
     "nogui"
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "key": "server_properties",
+      "from": "1.7",
+      "until": "26.2"
+    }
+  ],
   "javaVersionRanges": [
     { "from": "1.7",    "java": 8  },
     { "from": "1.17",   "java": 16 },

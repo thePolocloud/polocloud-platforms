@@ -1,0 +1,11 @@
+{
+  "key": "server_properties",
+  "steps": [
+    {
+      "name": "Setup port for spigot based server",
+      "file": "server.properties",
+      "key": "server-port",
+      "value": "%server_port%"
+    }
+  ]
+}
