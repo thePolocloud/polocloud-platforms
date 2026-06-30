@@ -4,6 +4,7 @@
     {
       "name": "Setup port for spigot based server",
       "file": "server.properties",
+      "type": "REPLACE",
       "key": "server-port",
       "value": "%server_port%"
     }
