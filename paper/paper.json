@@ -6,7 +6,7 @@
     "nogui"
   ],
   "jvmArgs": [
-    "com.mojang.eula.agree=true"
+    "-Dcom.mojang.eula.agree=true"
   ],
   "tasks": [
     {
