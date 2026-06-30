@@ -7,6 +7,13 @@
       "type": "REPLACE",
       "key": "server-port",
       "value": "%server_port%"
+    },
+    {
+      "name": "Setup query port for spigot based server",
+      "file": "server.properties",
+      "type": "REPLACE",
+      "key": "query.port",
+      "value": "%server_port%"
     }
   ]
 }
